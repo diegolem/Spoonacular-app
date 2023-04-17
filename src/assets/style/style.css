@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+#root {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}

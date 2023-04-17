@@ -5,15 +5,19 @@ import { Form, Row, Col, Card, Input } from 'antd';
 const { useForm, Item } = Form;
 
 import type {
-    ISearchForm
+    ISearchForm,
+    ISearchRecipe
 } from '../types/types';
 
-export const SearchRecipes = () => {
+export const SearchRecipes = ( { onSearch } : ISearchRecipe ) => {
     const [form] = useForm<ISearchForm>();
-    const [inputValue, setInputValue] = useState('');
 
     const handleFinish = async (values: ISearchForm) => {
-        console.log(values);
+        const { query } = values;
+
+        const queryParam = query.trim();
+
+        onSearch(queryParam);
     }
 
     return (

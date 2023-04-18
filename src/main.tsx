@@ -7,7 +7,7 @@ import {
     Route } from "react-router-dom";
 import { SpoonacularApp } from "./SpoonacularApp";
 import './assets/style/style.css';
-import {RecipeDetail} from "./components/RecipeDetail";
+import { RecipeDetail, loader as loaderRecipeDetail } from "./components/RecipeDetail";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,8 +16,9 @@ const router = createBrowserRouter(
             element={<SpoonacularApp />}
         >
             <Route
-                path={"recipe/:recipeId"}
+                path={"/recipe/:recipeId"}
                 element={<RecipeDetail />}
+                loader={loaderRecipeDetail}
             />
         </Route>
     )

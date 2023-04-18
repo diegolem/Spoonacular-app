@@ -38,8 +38,6 @@ export const getRecipes = async (param: string, numByPage: number) => {
         },
     ];
 
-    console.log(param);
-
     return results.map(({ id, title, image, imageType }: IRecipe) => {
         const newRecipe:IRecipe = {
             id,

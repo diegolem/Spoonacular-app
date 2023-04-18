@@ -1,6 +1,7 @@
 import { IRecipeGrid } from "../types/types";
 import { useFetchRecipes } from "../hooks/useFetchRecipes";
-import {Card, Row, Col, Space, Image, Typography } from 'antd';
+import { Card, Row, Col, Space, Image, Typography, Button } from 'antd';
+import { ZoomInOutlined } from '@ant-design/icons';
 
 const { Text } = Typography;
 
@@ -13,21 +14,35 @@ export const RecipeGrid = ({ paramSearch }: IRecipeGrid) => {
         <>
             <h1>{paramSearch}</h1>
             <Row gutter={24}>
-                <Space>
-                {recipes.map(({ id, title, image, imageType }) => (
-                    <Col span={6} >
-                        <Card
-                            key={id}
-                            style={{ width: 350 }}
-                        >
-                            <Image
-                                src={image}
-                            />
-                            <Text >{ title }</Text>
-                        </Card>
-                    </Col>
-                ))}
-                </Space>
+                <Col span={24}>
+                    <Row>
+                        {recipes.map(({ id, title, image }) => (
+                            <Col span={8} style={{ textAlign: "center" }} >
+                                <Card
+                                    key={id}
+                                    style={{ width: 450 }}
+                                >
+                                    <Image
+                                        src={image}
+                                    />
+                                    <br/>
+                                    <br/>
+                                    <Space direction="vertical" style={{ width: '100%' }}>
+                                        <Text strong>{ title }</Text>
+                                        <Button
+                                            type="primary"
+                                            block
+                                            icon={<ZoomInOutlined />}
+                                        >
+                                            Ver ingredientes
+                                        </Button>
+                                    </Space>
+                                </Card>
+                                <br />
+                            </Col>
+                        ))}
+                    </Row>
+                </Col>
             </Row>
         </>
     );

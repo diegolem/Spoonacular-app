@@ -1,5 +1,3 @@
-import {FormEventHandler, useState} from "react";
-import type { FC } from "react";
 import { Form, Row, Col, Card, Input } from 'antd';
 
 const { useForm, Item } = Form;

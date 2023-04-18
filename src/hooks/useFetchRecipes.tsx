@@ -18,7 +18,7 @@ export const useFetchRecipes = (searchParam: string) => {
     }
 
     useEffect(() => {
-        getRecipesByParams(searchParam, pagination);
+        getRecipesByParams(searchParam, pagination).then(r => null);
     }, []);
 
     return {

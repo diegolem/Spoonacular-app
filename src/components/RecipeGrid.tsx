@@ -1,16 +1,14 @@
-import {IRecipe, IRecipeGrid} from "../types/types";
+
 import { useFetchRecipes } from "../hooks/useFetchRecipes";
-import {Row, Col, Button, Typography, Space} from 'antd';
-import {ArrowLeftOutlined} from '@ant-design/icons';
+import { Row, Col, Button, Space } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Outlet, useNavigation} from "react-router-dom";
-import {RecipeCard} from "./RecipeCard";
+import { RecipeCard } from "./RecipeCard";
 
-const { Text, Title } = Typography;
-
-export type { IRecipeGrid } from '../types/types';
+import {IRecipe, IRecipeGrid} from "../types/types";
 
 export const RecipeGrid = ({ paramSearch, handleActionDetail, lookingDetail }: IRecipeGrid) => {
-    const { recipes, isLoading } = useFetchRecipes(paramSearch);
+    const { recipes } = useFetchRecipes(paramSearch);
     const navigation = useNavigation();
 
     return (
@@ -25,7 +23,7 @@ export const RecipeGrid = ({ paramSearch, handleActionDetail, lookingDetail }: I
                                         <Button
                                             type={"primary"}
                                             icon={<ArrowLeftOutlined />}
-                                            onClick={ev => handleActionDetail(false)}
+                                            onClick={() => handleActionDetail(false)}
                                         >
                                             Regresar
                                         </Button>

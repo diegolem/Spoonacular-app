@@ -1,18 +1,16 @@
-import type {
-    IIngredient
-} from "../types/types";
-import {Card, Col, Image, Space, Typography} from "antd";
+import { Card, Col, Image, Typography } from "antd";
+
+import type { IIngredient } from "../types/types";
 
 const { Text, Title } = Typography;
 
-export const IngredientCard = ({ id, originalName, quantity, image, unit, unitMeasure }: IIngredient) => {
+export const IngredientCard = ({ originalName, image, unit }: IIngredient) => {
     return (
         <>
             <Col
                 style={{ padding: '5px' }}
             >
                 <Card
-                    key={id}
                     style={{ width: 200 }}
                 >
                     <Image

@@ -1,7 +1,6 @@
-import type {
-    IInstruction
-} from "../types/types";
 import {Badge, Card, Col, Row, Space, Tag, Typography} from "antd";
+
+import type { IInstruction } from "../types/types";
 
 const { Text, Title } = Typography;
 

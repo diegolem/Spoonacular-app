@@ -1,11 +1,11 @@
-import {Card, Col, Divider, Image, Row, Space, Tag, Typography} from "antd";
+import { Card, Col, Divider, Image, Row, Space, Tag, Typography } from "antd";
 
 import { useLoaderData } from "react-router-dom";
-
 import { getRecipe } from "../helpers/getRecipe";
-import {IRecipe, IIngredient, IInstruction} from "../types/types";
-import {IngredientCard} from "./IngredientCard";
-import {InstructionStep} from "./InstructionStep";
+import { IngredientCard } from "./IngredientCard";
+import { InstructionStep } from "./InstructionStep";
+
+import { IRecipe, IIngredient, IInstruction } from "../types/types";
 
 const { Text, Title } = Typography;
 
@@ -51,7 +51,7 @@ export const RecipeDetail = () => {
                                             </Col>
                                             <Col span={12}>
                                                 <Title type={"secondary"} level={5}>Dish types</Title>
-                                                { recipe.dishTypes.map((dishType: string) => <Tag color={"geekblue"}>{dishType}</Tag>)}
+                                                { recipe.dishTypes.map((dishType: string) => <Tag key={dishType} color={"geekblue"}>{dishType}</Tag>)}
                                             </Col>
                                         </Row>
 
@@ -59,7 +59,7 @@ export const RecipeDetail = () => {
                                             <Col span={24}>
                                                 <Space direction={"horizontal"} size={"middle"}>
                                                     <Row>
-                                                        { recipe.extendedIngredients.map((ingredient: IIngredient) => <IngredientCard { ...ingredient } />) }
+                                                        { recipe.extendedIngredients.map((ingredient: IIngredient) => <IngredientCard key={ingredient.id} { ...ingredient } />) }
                                                     </Row>
                                                 </Space>
                                             </Col>
@@ -81,7 +81,6 @@ export const RecipeDetail = () => {
                                                     <InstructionStep key={instruction.order} {...instruction} />)) }
                                             </Col>
                                         </Row>
-
                                     </Space>
                                 </Card>
                             )}

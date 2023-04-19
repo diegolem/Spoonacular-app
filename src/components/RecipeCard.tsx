@@ -1,7 +1,8 @@
+import { Button, Card, Col, Image, Space, Typography } from "antd";
+import { ZoomInOutlined } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
+
 import type { RecipeCardArgs } from "../types/types";
-import {Button, Card, Col, Image, Space, Typography} from "antd";
-import {ZoomInOutlined} from "@ant-design/icons";
-import {NavLink} from "react-router-dom";
 
 const { Text } = Typography;
 
@@ -31,7 +32,7 @@ export const RecipeCard = ({ handleActionDetail, recipe }: RecipeCardArgs) => {
                         icon={<ZoomInOutlined />}
                     >
                         <NavLink
-                            to={`/recipe/${id}`}
+                            to={`${id}`}
                             onClick={ onActionDetail }
                         >
                             Ver ingredientes

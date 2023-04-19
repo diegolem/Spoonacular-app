@@ -16,7 +16,7 @@ export const InstructionStep = ({ equipment, ingredients, order, step }: IInstru
                                 <Col span={24}>
                                     <Space size={"small"}>
                                         <Text>Ingredients to use</Text>
-                                        {ingredients.map(ingredient => <Tag color={"purple"}>{ingredient}</Tag>)}
+                                        {ingredients.map(ingredient => <Tag key={ingredient} color={"purple"}>{ingredient}</Tag>)}
                                     </Space>
                                 </Col>
                             </Row>
@@ -27,7 +27,7 @@ export const InstructionStep = ({ equipment, ingredients, order, step }: IInstru
                                 <Col span={24}>
                                     <Space size={"small"}>
                                         <Text>Equipment to use</Text>
-                                        {equipment.map(equip => <Tag color={"volcano"}>{equip}</Tag>)}
+                                        {equipment.map(equip => <Tag key={equip} color={"volcano"}>{equip}</Tag>)}
                                     </Space>
                                 </Col>
                             </Row>

@@ -1,5 +1,5 @@
 import { SearchRecipes} from "./components/SearchRecipes";
-import {useState} from "react";
+import { useState } from "react";
 import { RecipeGrid } from "./components/RecipeGrid";
 import {useNavigate} from "react-router-dom";
 import { Divider } from "antd";

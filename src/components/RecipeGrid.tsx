@@ -1,6 +1,6 @@
 import {IRecipe, IRecipeGrid} from "../types/types";
 import { useFetchRecipes } from "../hooks/useFetchRecipes";
-import {Row, Col, Button, Typography, Divider, Space} from 'antd';
+import {Row, Col, Button, Typography, Space} from 'antd';
 import {ArrowLeftOutlined} from '@ant-design/icons';
 import { Outlet, useNavigation} from "react-router-dom";
 import {RecipeCard} from "./RecipeCard";

@@ -2,7 +2,7 @@ import { SearchRecipes} from "./components/SearchRecipes";
 import {useState} from "react";
 import { RecipeGrid } from "./components/RecipeGrid";
 import {useNavigate} from "react-router-dom";
-import {Divider} from "antd";
+import { Divider } from "antd";
 
 export const SpoonacularApp: Function = () => {
     const navigate = useNavigate();

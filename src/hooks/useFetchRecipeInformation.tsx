@@ -7,12 +7,10 @@ import type {
 
 export const useFetchRecipeInformation = (recipeId: number) => {
     const [recipe, setRecipe] = useState<IRecipe>();
-    const [isLoading, setIsLoading] = useState(true);
 
     const getRecipeInfo = async (recipeId: number) => {
         const recipeInfo:IRecipe = await getRecipe(recipeId);
         setRecipe(recipeInfo);
-        setIsLoading(false);
     }
 
     useEffect(() => {
@@ -20,7 +18,6 @@ export const useFetchRecipeInformation = (recipeId: number) => {
     }, []);
 
     return {
-        recipe,
-        isLoading
+        recipe
     }
 }

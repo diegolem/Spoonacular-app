@@ -1,9 +1,11 @@
 import {IRecipe, IRecipeGrid} from "../types/types";
 import { useFetchRecipes } from "../hooks/useFetchRecipes";
-import { Row, Col, Button } from 'antd';
+import {Row, Col, Button, Typography, Divider, Space} from 'antd';
 import {ArrowLeftOutlined} from '@ant-design/icons';
 import { Outlet, useNavigation} from "react-router-dom";
 import {RecipeCard} from "./RecipeCard";
+
+const { Text, Title } = Typography;
 
 export type { IRecipeGrid } from '../types/types';
 
@@ -13,7 +15,6 @@ export const RecipeGrid = ({ paramSearch, handleActionDetail, lookingDetail }: I
 
     return (
         <>
-            <h1>{paramSearch}</h1>
             <Row gutter={24}>
                 <Col span={24}>
                     { lookingDetail ? (
@@ -30,12 +31,14 @@ export const RecipeGrid = ({ paramSearch, handleActionDetail, lookingDetail }: I
                                         </Button>
                                     </Col>
                                 </Row>
-                                <div
-                                    id="detail"
-                                    className={navigation.state === "loading" ? "loading" : ""}
-                                >
-                                    <Outlet />
-                                </div>
+                                <Space>
+                                    <div
+                                        id="detail"
+                                        className={navigation.state === "loading" ? "loading" : ""}
+                                    >
+                                        <Outlet />
+                                    </div>
+                                </Space>
                             </Col>
                         </Row>
                         ) : (

@@ -1,7 +1,7 @@
 import { CSSProperties, useState } from "react";
 import { Layout } from "antd";
 const { Header, Footer, Content } = Layout;
-import { Outlet } from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 
 const headerStyle: CSSProperties = {
     textAlign: 'center',
@@ -23,7 +23,9 @@ export const ContentLayout = () => {
     return (
         <Layout>
             <Header style={headerStyle}>
-                Spoonacular - App
+                <NavLink to={"recipes"} style={{ color: '#FFF' }}>
+                    Spoonacular - App
+                </NavLink>
             </Header>
             <Content style={contentStyle}>
                 <Outlet />

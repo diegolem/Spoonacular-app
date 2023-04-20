@@ -6,41 +6,26 @@ import type { RecipeCardArgs } from "../types/types";
 
 const { Text } = Typography;
 
-export const RecipeCard = ({ handleActionDetail, recipe }: RecipeCardArgs) => {
+export const RecipeCard = ({ recipe }: RecipeCardArgs) => {
     const { id, image, title } = recipe
 
-    const onActionDetail = () => {
-        handleActionDetail(true);
-    }
-
     return (
-        <Col span={8} style={{ textAlign: "center" }} >
-            <Card
-                key={id}
-                style={{ width: 450 }}
-            >
-                <Image
-                    src={image}
-                />
-                <br/>
-                <br/>
-                <Space direction="vertical" style={{ width: '100%' }}>
-                    <Text strong>{ title }</Text>
-                    <Button
-                        type="primary"
-                        block
-                        icon={<ZoomInOutlined />}
-                    >
-                        <NavLink
-                            to={`${id}`}
-                            onClick={ onActionDetail }
+        <Col style={{ padding: '10px 2% 10px 2%' }}>
+            <Card key={id}>
+                <Space direction="vertical" size={"middle"} style={{ width: '100%' }}>
+                    <Image src={image} />
+                    <Space direction="vertical" style={{ width: '100%' }}>
+                        <Text strong>{ title }</Text>
+                        <Button
+                            type="primary"
+                            block
+                            icon={<ZoomInOutlined />}
                         >
-                            Ver ingredientes
-                        </NavLink>
-                    </Button>
+                            <NavLink to={`${id}`} >Ver ingredientes</NavLink>
+                        </Button>
+                    </Space>
                 </Space>
             </Card>
-            <br />
         </Col>
     );
 }

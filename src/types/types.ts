@@ -38,12 +38,9 @@ export interface ISearchRecipe {
 }
 
 export interface IRecipeGrid {
-    paramSearch: string,
-    handleActionDetail: (state: boolean) => any,
-    lookingDetail: boolean
+    paramSearch: string
 }
 
 export interface RecipeCardArgs {
-    handleActionDetail: (state: boolean) => any,
     recipe: IRecipe
 }

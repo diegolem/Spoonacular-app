@@ -12,7 +12,6 @@ export const SearchRecipes = ( { onSearch } : ISearchRecipe ) => {
 
     const handleFinish = async (values: ISearchForm) => {
         const { query } = values;
-
         const queryParam = query.trim();
 
         onSearch(queryParam);
@@ -21,7 +20,7 @@ export const SearchRecipes = ( { onSearch } : ISearchRecipe ) => {
     return (
         <Row>
             <Col span={24}>
-                <Card title="Buscar recetas">
+                <Card>
                     <Form
                         form={ form }
                         layout="vertical"
@@ -30,7 +29,7 @@ export const SearchRecipes = ( { onSearch } : ISearchRecipe ) => {
                         onFinish={ (v) => void handleFinish(v) }
                     >
                         <Item
-                            label={ 'Ingresa un parametro de búsqueda' }
+                            label={ 'Ingresa el nombre de una receta' }
                             name={ 'query' }
                         >
                             <Input

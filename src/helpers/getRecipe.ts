@@ -5,9 +5,14 @@ import type {
 import { infoRecipe } from '../test/testData';
 
 export const getRecipe = async (recipeId: number) => {
-    //const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=cdea590a466e4c87877e9bb550091d2d&includeNutrition=false`;
-    //const resp = await fetch(url);
-    //const data = await resp.json();
+    // const url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=cdea590a466e4c87877e9bb550091d2d&includeNutrition=false`;
+    // const resp = await fetch(url);
+    // const {
+    //         id, title, readyInMinutes, servings,
+    //         image, imageType, summary, dishTypes,
+    //         instructions, analyzedInstructions,
+    //         extendedIngredients
+    //     } = await resp.json();
 
     const {
         id, title, readyInMinutes, servings,

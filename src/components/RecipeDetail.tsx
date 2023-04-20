@@ -1,11 +1,12 @@
-import { Card, Col, Divider, Image, Row, Space, Tag, Typography } from "antd";
+import {Button, Card, Col, Divider, Image, Row, Space, Tag, Typography} from "antd";
 
-import { useLoaderData } from "react-router-dom";
+import {useLoaderData, useNavigate} from "react-router-dom";
 import { getRecipe } from "../helpers/getRecipe";
 import { IngredientCard } from "./IngredientCard";
 import { InstructionStep } from "./InstructionStep";
 
 import { IRecipe, IIngredient, IInstruction } from "../types/types";
+import {ArrowLeftOutlined} from "@ant-design/icons";
 
 const { Text, Title } = Typography;
 
@@ -18,10 +19,20 @@ export const loader = async ({ params }: any | null) => {
 
 export const RecipeDetail = () => {
     const { recipe }: any = useLoaderData();
+    const navigate = useNavigate();
 
     return (
         <>
             <Row>
+                <Col span={24}>
+                    <Button
+                        type={"primary"}
+                        icon={<ArrowLeftOutlined />}
+                        onClick={(ev) => navigate(-1)}
+                    >
+                        Regresar
+                    </Button>
+                </Col>
                 <Col span={24}>
                     <Row>
                         <Col span={24}>

@@ -17,6 +17,7 @@ html {
 html,
 body {
     height: 100%;
-    margin: 5px;
     background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
 }
